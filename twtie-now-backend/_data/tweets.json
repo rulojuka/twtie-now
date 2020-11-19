@@ -1,0 +1,72 @@
+[
+    {
+        "usuario":{
+            "login": "fcasanova",
+            "nome": "Fernando",
+            "sobrenome": "Casanova",
+            "foto": "https://s3.amazonaws.com/gupy5/production/companies/651/career/802/images/2020-05-07_21-42_candidate/1b626d2a-236e-4109-835c-871a4261e21f.png",
+            "email": "fcasanova@example.com"
+        },
+        "conteudo": "Neque instant #quisquam quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        "likes": [
+            {
+                "usuario": {
+                    "login": "usuario1"
+                }
+            }
+        ],
+        "totalLikes": 1
+    },
+    {
+        "usuario":{
+            "login": "usuario1",
+            "nome": "Usuario",
+            "sobrenome": "Um",
+            "foto": "https://placehold.it/50x50",
+            "email": "usuario1@example.com"
+        },
+        "conteudo": "Daino instant quisquam est qui #dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        "likes": [],
+        "totalLikes": 0
+    },
+    {
+        "usuario":{
+            "login": "usuario2",
+            "nome": "Usuario",
+            "sobrenome": "Dois",
+            "foto": "https://placehold.it/50x50",
+            "email": "usuario2@example.com"
+        },
+        "conteudo": "Ipsum instant quisquam est qui #dolorem ipsum quia dolor #sit amet, consectetur, adipisci velit.",
+        "likes": [
+            {
+                "usuario": {
+                    "login": "usuario3"
+                }
+            },
+            {
+                "usuario": {
+                    "login": "fcasanova"
+                }
+            }
+        ],
+        "totalLikes": 2
+    },
+    {
+        "usuario":{
+            "login": "usuario3",
+            "nome": "Usuario",
+            "sobrenome": "Três",
+            "foto": "https://placehold.it/50x50",
+            "email": "usuario3@example.com"
+        },
+        "conteudo": "#Dasque instant quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.",
+        "likes": [],
+        "totalLikes": 0
+    }
+]
+
+
+
+
+

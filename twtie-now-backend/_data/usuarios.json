@@ -1,0 +1,34 @@
+[
+    {
+        "login": "fcasanova",
+        "nome": "Fernando",
+        "sobrenome": "Casanova",
+        "foto": "https://s3.amazonaws.com/gupy5/production/companies/651/career/802/images/2020-05-07_21-42_candidate/1b626d2a-236e-4109-835c-871a4261e21f.png",
+        "email": "fcasanova@example.com",
+        "senha": "123456"
+    },
+    {
+        "login": "usuario1",
+        "nome": "Usuario",
+        "sobrenome": "Um",
+        "foto": "https://vectorified.com/images/unknown-avatar-icon-7.jpg",
+        "email": "usuario1@example.com",
+        "senha": "123456"
+    },
+    {
+        "login": "usuario2",
+        "nome": "Usuario",
+        "sobrenome": "Dois",
+        "foto": "https://vectorified.com/images/unknown-avatar-icon-7.jpg",
+        "email": "usuario2@example.com",
+        "senha": "123456"
+    },
+    {
+        "login": "usuario3",
+        "nome": "Usuario",
+        "sobrenome": "Três",
+        "foto": "https://vectorified.com/images/unknown-avatar-icon-7.jpg",
+        "email": "usuario3@example.com",
+        "senha": "123456"
+    }
+]
