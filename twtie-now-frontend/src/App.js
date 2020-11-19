@@ -4,7 +4,7 @@ import NavMenu from './components/NavMenu'
 import Dashboard from './components/Dashboard'
 import Widget from './components/Widget'
 import TrendsArea from './components/TrendsArea'
-import Tweet from './components/Tweet'
+import TweetsContainer from './components/TweetsContainer';
 
 class App extends Component {
   render() {
@@ -30,9 +30,7 @@ class App extends Component {
             </Dashboard>
             <Dashboard posicao="centro">
                 <Widget>
-                    <div className="tweetsArea">
-                        <Tweet />
-                    </div>
+                    <TweetsContainer />
                 </Widget>
             </Dashboard>
         </div>
