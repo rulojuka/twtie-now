@@ -4,6 +4,7 @@ import Widget from '../../components/Widget'
 
 import './loginPage.css'
 import { FormManager } from '../../components/FormManager'
+import { LoginService } from '../../services/LoginService'
 
 const InputFormField = ({ id, label, type, errors, touched, values, onChange, onBlur }) => {
   const isTouched = Boolean(touched[id]);
@@ -63,6 +64,18 @@ class LoginPage extends Component {
     evento.preventDefault()
 
     // Faça o login e salve o token no localStorage
+    const dadosDeLogin = {
+      login: values.inputLogin,
+      senha: values.inputSenha
+    }
+
+    LoginService.fazerLogin(dadosDeLogin)
+      .then(() => {
+        this.props.history.push('/')
+      })
+      .catch((err) => {
+        console.error(`Erro ${err.status}.`, err.message)
+      })
   }
 
   render() {

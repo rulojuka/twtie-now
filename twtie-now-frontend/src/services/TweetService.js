@@ -2,13 +2,15 @@ const URLServidor = 'http://localhost:3001'
 
 export const TweetService = {
   busca() {
-    const URL = `${URLServidor}/tweets`
+    const token = localStorage.getItem('TOKEN')
+    const URL = `${URLServidor}/tweets?X-AUTH-TOKEN=${token}`
     return fetch(URL)
       .then(response => response.json())
   },
 
   adiciona(conteudo) {
-    const URL = `${URLServidor}/tweets`
+    const token = localStorage.getItem('TOKEN')
+    const URL = `${URLServidor}/tweets?X-AUTH-TOKEN=${token}`
     const request = {
       method: 'POST',
       headers: {

@@ -1,12 +1,58 @@
 const errors = require('restify-errors');
 
 module.exports = (app) => {
-    app.post('/rota', (req, res, next) => {
-            // res.status(200)
-            // res.json({})
-            // ou 
-            // return next(new errors.NotImplementedError())
+    const dao = app.infra.dao.UsuariosDAO
+
+    // Se for feito apenas o critério de aceite 1
+    // app.post('/login', (req, res, next) => {
+    //         const jsonBody = typeof req.body === 'object' ? req.body : JSON.parse(req.body)
+    //         console.log("Tentando logar com",jsonBody)
+    //         return dao.buscarPorLoginESenha(jsonBody)
+    //             .then(resposta => {
+    //                 if(resposta && resposta.login===jsonBody.login){
+    //                     res.status(200)
+    //                     res.json({})
+    //                 }else{
+    //                     return next(new errors.UnauthorizedError())
+    //                 }
+    //             })
+    //     }
+    // )
+
+    const authLogin = app.middlewares.authLogin
+    app.post('/login', (req, res, next) => {
+        const jsonBody = typeof req.body === 'object' ? req.body : JSON.parse(req.body)
+        const login = jsonBody.login
+        const senha = jsonBody.senha
+
+        if (jsonBody.login && jsonBody.senha) {
+            return dao
+                .buscarPorLoginESenha({
+                    login,
+                    senha
+                })
+                .then((usuario) => {
+                    if (!usuario) {
+                        return next(new errors.NotFoundError('Usuario não encontrado'))
+                    }
+                    const token = authLogin.geraToken(login, senha)
+                    res.status(200)
+                    res.json({ token: token })
+                })
         }
+
+        if (!jsonBody.login && !jsonBody.senha) {
+            return next(new errors.InvalidContentError('É necessário informar um login e uma senha para efetuar login no sistema'))
+        } else {
+            if (!jsonBody.login) {
+                return next(new errors.InvalidContentError('É necessário informar um login para efetuar login no sistema'))
+            }
+            if (!jsonBody.senha) {
+                return next(new errors.InvalidContentError('É necessário informar uma senha para efetuar login no sistema'))
+            }
+        }
+
+    }
     )
 
 }

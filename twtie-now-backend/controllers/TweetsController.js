@@ -60,7 +60,7 @@ class TweetsController {
         const jsonBody = typeof req.body === 'object' ? req.body : JSON.parse(body)
         console.log(req.login)
         const tweetObj = {
-            login: "fcasanova", // Isso deve ser alterado ao implementar a autenticação
+            login: req.login,
             conteudo: jsonBody.conteudo
         }
         try {

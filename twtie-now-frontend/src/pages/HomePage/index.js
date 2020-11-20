@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
-import Cabecalho from './components/Cabecalho'
-import NavMenu from './components/NavMenu'
-import Dashboard from './components/Dashboard'
-import Widget from './components/Widget'
-import TrendsArea from './components/TrendsArea'
-import TweetsContainer from './components/TweetsContainer';
-import { TweetService } from "./services/TweetService"
+import Cabecalho from '../../components/Cabecalho'
+import NavMenu from '../../components/NavMenu'
+import Dashboard from '../../components/Dashboard'
+import Widget from '../../components/Widget'
+import TrendsArea from '../../components/TrendsArea'
+import TweetsContainer from '../../components/TweetsContainer';
+import { TweetService } from "../../services/TweetService"
 
 class App extends Component {
   constructor(){
